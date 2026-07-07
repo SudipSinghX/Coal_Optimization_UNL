@@ -25,6 +25,39 @@ export const apiBase = (
   import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:8001/api/v1"
 ).replace(/\/+$/, ""); // strip any trailing slash
 
+// --- Site Access Password Gate In-Memory Store & Fetch Interceptor ---
+let siteAccessPassword = "";
+
+export function setSitePassword(password) {
+  siteAccessPassword = password;
+}
+
+export function getSitePassword() {
+  return siteAccessPassword;
+}
+
+// Hijack global window.fetch to automatically include the password header if set
+const originalFetch = window.fetch;
+window.fetch = async function (resource, options = {}) {
+  const password = getSitePassword();
+  if (password) {
+    // Ensure options.headers is initialized
+    if (!options.headers) {
+      options.headers = {};
+    }
+    
+    if (options.headers instanceof Headers) {
+      options.headers.set("X-Site-Access-Password", password);
+    } else if (Array.isArray(options.headers)) {
+      options.headers.push(["X-Site-Access-Password", password]);
+    } else {
+      options.headers["X-Site-Access-Password"] = password;
+    }
+  }
+  return originalFetch(resource, options);
+};
+// ---------------------------------------------------------------------
+
 /**
  * Build a full URL for a given API path segment.
  *

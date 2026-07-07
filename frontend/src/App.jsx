@@ -1,5 +1,7 @@
 import React, { useMemo, useState, useEffect } from "react";
 import snapshot from "./data/demoSnapshot.json";
+import { setSitePassword, apiBase } from "./lib/api";
+import PasswordGate from "./components/PasswordGate";
 
 // Import custom tab components
 import OverviewTab from "./components/OverviewTab";
@@ -40,8 +42,36 @@ export default function App() {
   const [snapshotData, setSnapshotData] = useState(snapshot);
   const [role, setRole] = useState("Fuel Cell Analyst");
 
+  // Site Access Password Gate State
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [checkingAuth, setCheckingAuth] = useState(true);
+
   // Phase 1A: live backend data hook — independent of demoSnapshot
   const liveData = useLiveBackend();
+
+  useEffect(() => {
+    const probeAuth = async () => {
+      const savedPassword = sessionStorage.getItem("site_access_password");
+      if (savedPassword) {
+        setSitePassword(savedPassword);
+      }
+
+      try {
+        const resp = await fetch(`${apiBase}/health`);
+        if (resp.status === 401) {
+          setIsAuthenticated(false);
+        } else {
+          setIsAuthenticated(true);
+        }
+      } catch (err) {
+        // Backend offline -> bypass to allow demo mode
+        setIsAuthenticated(true);
+      } finally {
+        setCheckingAuth(false);
+      }
+    };
+    probeAuth();
+  }, []);
 
   // Dynamic fetch of current backend snapshot
   const fetchSnapshot = async () => {
@@ -114,6 +144,19 @@ export default function App() {
       };
     });
   }, [recommendedAllocations]);
+
+  if (checkingAuth) {
+    return (
+      <div className="password-gate-container" style={{ display: "flex", flexDirection: "column", gap: "15px" }}>
+        <div className="password-gate-loading-spinner" />
+        <p style={{ color: "#94a3b8", fontFamily: "var(--font-body)", fontSize: "0.9rem" }}>Checking connection...</p>
+      </div>
+    );
+  }
+
+  if (!isAuthenticated) {
+    return <PasswordGate onAuthenticated={() => setIsAuthenticated(true)} />;
+  }
 
   return (
     <div className="dashboard">

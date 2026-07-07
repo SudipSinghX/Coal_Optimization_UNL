@@ -53,6 +53,9 @@ class Settings(BaseSettings):
     upsldc_monitor_hour: int = 9
     upsldc_monitor_minute: int = 0
 
+    # Whole-site Access Password Gate
+    site_access_password: str | None = None
+
 
 @lru_cache
 def get_settings() -> Settings:

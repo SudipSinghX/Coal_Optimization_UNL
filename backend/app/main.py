@@ -22,6 +22,8 @@ from app.modules.scheduler.jobs import shutdown_scheduler, start_scheduler
 from app.modules.scheduler.router import router as scheduler_router
 from app.modules.validation.router import router as validation_router
 
+from app.core.middleware import PasswordGateMiddleware
+
 settings = get_settings()
 
 logging.basicConfig(level=settings.log_level, format="%(asctime)s %(levelname)s [%(name)s] %(message)s")
@@ -47,7 +49,11 @@ app = FastAPI(
 
 register_exception_handlers(app)
 
+# Password Gate Middleware (registered before CORSMiddleware so CORSMiddleware wraps it)
+app.add_middleware(PasswordGateMiddleware)
+
 # --- CORS -------------------------------------------------------------------
+
 # Parse the comma-separated ALLOWED_ORIGINS env var into a list.
 _cors_origins = [o.strip() for o in settings.allowed_origins.split(",") if o.strip()]
 app.add_middleware(
