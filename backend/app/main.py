@@ -49,9 +49,6 @@ app = FastAPI(
 
 register_exception_handlers(app)
 
-# Password Gate Middleware (registered before CORSMiddleware so CORSMiddleware wraps it)
-app.add_middleware(PasswordGateMiddleware)
-
 # Parse the comma-separated ALLOWED_ORIGINS or CORS_ORIGINS env var into a list.
 import os
 _origins_str = os.environ.get("CORS_ORIGINS") or os.environ.get("ALLOWED_ORIGINS") or settings.cors_origins or settings.allowed_origins
@@ -59,6 +56,11 @@ _cors_origins = [o.strip() for o in _origins_str.split(",") if o.strip()]
 
 # If wildcard "*" is in origins, credentials must be set to False to comply with CORS spec
 _allow_all = "*" in _cors_origins
+
+# NOTE: Starlette applies middleware in REVERSE registration order (last registered = outermost).
+# CORSMiddleware MUST be registered LAST so it wraps everything and handles OPTIONS preflights
+# before PasswordGateMiddleware can reject them.
+app.add_middleware(PasswordGateMiddleware)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"] if _allow_all else _cors_origins,
