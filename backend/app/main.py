@@ -52,18 +52,20 @@ register_exception_handlers(app)
 # Password Gate Middleware (registered before CORSMiddleware so CORSMiddleware wraps it)
 app.add_middleware(PasswordGateMiddleware)
 
-# --- CORS -------------------------------------------------------------------
+# Parse the comma-separated ALLOWED_ORIGINS or CORS_ORIGINS env var into a list.
+import os
+_origins_str = os.environ.get("CORS_ORIGINS") or os.environ.get("ALLOWED_ORIGINS") or settings.cors_origins or settings.allowed_origins
+_cors_origins = [o.strip() for o in _origins_str.split(",") if o.strip()]
 
-# Parse the comma-separated ALLOWED_ORIGINS env var into a list.
-_cors_origins = [o.strip() for o in settings.allowed_origins.split(",") if o.strip()]
+# If wildcard "*" is in origins, credentials must be set to False to comply with CORS spec
+_allow_all = "*" in _cors_origins
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=_cors_origins,
-    allow_credentials=True,
+    allow_origins=["*"] if _allow_all else _cors_origins,
+    allow_credentials=not _allow_all,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-# ---------------------------------------------------------------------------
 
 _prefix = settings.api_v1_prefix
 

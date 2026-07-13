@@ -14,9 +14,8 @@ class Settings(BaseSettings):
     api_v1_prefix: str = "/api/v1"
     log_level: str = "INFO"
 
-    # CORS — comma-separated list of allowed frontend origins.
-    # Example: ALLOWED_ORIGINS=http://localhost:5173,http://127.0.0.1:5173
-    allowed_origins: str = "http://localhost:5173,http://127.0.0.1:5173"
+    allowed_origins: str = "http://localhost:5173,http://127.0.0.1:5173,https://coal-optimization-unl.vercel.app"
+    cors_origins: str | None = None
 
     # Database
     database_url: str = "postgresql+psycopg://codsp_user:change_me@localhost:5432/codsp_db"
