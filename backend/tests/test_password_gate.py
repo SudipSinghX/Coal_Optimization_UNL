@@ -8,8 +8,12 @@ def test_password_gate_disabled_by_default():
     settings = get_settings()
     settings.site_access_password = None
 
-    # Request health endpoint without header
+    # Request health endpoint without header (both prefixed and root)
     response = client.get("/api/v1/health")
+    assert response.status_code == 200
+    assert response.json()["status"] == "ok"
+
+    response = client.get("/health")
     assert response.status_code == 200
     assert response.json()["status"] == "ok"
 
@@ -24,12 +28,23 @@ def test_password_gate_enabled():
         assert response.status_code == 401
         assert "Unauthorized" in response.json()["detail"]
 
+        response = client.get("/health")
+        assert response.status_code == 401
+        assert "Unauthorized" in response.json()["detail"]
+
         # Request health endpoint with wrong header
         response = client.get("/api/v1/health", headers={"X-Site-Access-Password": "wrong-password"})
         assert response.status_code == 401
 
+        response = client.get("/health", headers={"X-Site-Access-Password": "wrong-password"})
+        assert response.status_code == 401
+
         # Request health endpoint with correct header
         response = client.get("/api/v1/health", headers={"X-Site-Access-Password": "test-secret-password"})
+        assert response.status_code == 200
+        assert response.json()["status"] == "ok"
+
+        response = client.get("/health", headers={"X-Site-Access-Password": "test-secret-password"})
         assert response.status_code == 200
         assert response.json()["status"] == "ok"
 

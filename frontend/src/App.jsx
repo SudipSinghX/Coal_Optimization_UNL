@@ -36,11 +36,94 @@ const TABS = [
 
 const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:8000";
 
+const INITIAL_AGREEMENTS = [
+  {
+    ipp_name: "Bajaj Energy, Lalitpur TPS",
+    ipp_vc: 3.39,
+    unl_tps_name: "Panki",
+    unl_vc: 3.31,
+    tied_ipp_details: "Lalitpur, Lalitpur, UP",
+    minimization_rule: "Already CCL coal with 10% premium. To improve coal quality, diversion of minimum 10 rakes per month from NCL is proposed.",
+    target_vc: null,
+    period_start: "2026-04-01",
+    period_end: "2026-04-15"
+  },
+  {
+    ipp_name: "Reliance Power, ROSA II",
+    ipp_vc: 3.75,
+    unl_tps_name: "Parichha",
+    unl_vc: 3.69,
+    tied_ipp_details: "ROSA, Shahjahanpur, UP",
+    minimization_rule: "VC will reduce once unit will start operating at full load. SECL rakes (10 rakes per month) will be provided to compensate NCL diversion.",
+    target_vc: null,
+    period_start: "2026-04-01",
+    period_end: "2026-04-15"
+  },
+  {
+    ipp_name: "KSK Mahanadi",
+    ipp_vc: 4.19,
+    unl_tps_name: "Jawaharpur",
+    unl_vc: 4.64,
+    tied_ipp_details: "KSK Mahanadi, Chhattisgarh",
+    minimization_rule: "Target VC = Rs 4.15/Unit, diversion from CCL (15 rakes/month), NCL (5 rakes per month), loading from SECL.",
+    target_vc: 4.15,
+    period_start: "2026-04-01",
+    period_end: "2026-04-15"
+  },
+  {
+    ipp_name: "BEPL, Khambharkhera",
+    ipp_vc: 4.10,
+    unl_tps_name: "Harduaganj D (2X250 MW)",
+    unl_vc: 4.35,
+    tied_ipp_details: "BEPL, Khambhankhera, Lakhimpur Kheri, UP",
+    minimization_rule: "Target VC = Rs 3.70 /unit; after reduction in premium.",
+    target_vc: 3.70,
+    period_start: "2026-04-01",
+    period_end: "2026-04-15"
+  },
+  {
+    ipp_name: "BEPL, Utraula",
+    ipp_vc: 3.99,
+    unl_tps_name: "Harduaganj E (1X660 MW)",
+    unl_vc: 4.10,
+    tied_ipp_details: "BEPL, Utraula, Balrampur, UP",
+    minimization_rule: "Target VC = Rs 3.60/unit",
+    target_vc: 3.60,
+    period_start: "2026-04-01",
+    period_end: "2026-04-15"
+  }
+];
+
 export default function App() {
   const [tab, setTab] = useState("overview");
   const [showDetailsDrawer, setShowDetailsDrawer] = useState(false);
   const [snapshotData, setSnapshotData] = useState(snapshot);
   const [role, setRole] = useState("Fuel Cell Analyst");
+  const [agreements, setAgreements] = useState([]);
+
+  // Fetch agreements from local backend on mount
+  useEffect(() => {
+    async function loadAgreements() {
+      try {
+        const resp = await fetch(`${API_BASE}/api/records/ipp-agreements`);
+        if (resp.ok) {
+          const data = await resp.json();
+          if (data && data.length > 0) {
+            setAgreements(data);
+            return;
+          }
+        }
+      } catch (err) {
+        console.warn("Could not load agreements from API, falling back to static lists:", err.message);
+      }
+      setAgreements(INITIAL_AGREEMENTS);
+    }
+    loadAgreements();
+  }, []);
+
+  const handleAgreementSaved = (newAgreement) => {
+    setAgreements((prev) => [newAgreement, ...prev]);
+  };
 
   // Site Access Password Gate State
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -345,20 +428,72 @@ export default function App() {
             <p className="section-intro">
               Manage operational fuel inputs and variable cost tie-up agreements with Independent Power Producers (IPPs).
             </p>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1.8fr", gap: "28px", alignItems: "start" }}>
-              <div className="panel">
+            <div className="forms-layout-grid">
+              <div className="panel" style={{ display: "flex", flexDirection: "column" }}>
                 <div className="panel-header">
                   <span className="panel-title">Daily Fuel Entry Form</span>
                   <span className="panel-badge amber">Manual Input</span>
                 </div>
-                <DailyFuelForm refreshLive={liveData.refresh} />
+                <div style={{ flex: 1 }}>
+                  <DailyFuelForm refreshLive={liveData.refresh} />
+                </div>
               </div>
-              <div className="panel">
+              <div className="panel" style={{ display: "flex", flexDirection: "column" }}>
                 <div className="panel-header">
                   <span className="panel-title">IPP VC Agreement & Rules Form</span>
                   <span className="panel-badge violet">Action Plan</span>
                 </div>
-                <IppAgreementForm />
+                <div style={{ flex: 1 }}>
+                  <IppAgreementForm agreements={agreements} onAgreementSaved={handleAgreementSaved} />
+                </div>
+              </div>
+            </div>
+
+            {/* Detached Active Reference Agreements section */}
+            <div className="panel agreements-section">
+              <div className="panel-header">
+                <span className="panel-title">Active Reference Agreements</span>
+                <span className="panel-badge teal">Registry</span>
+              </div>
+              <div className="agreements-grid">
+                {agreements.map((a, i) => (
+                  <div key={i} className="agreement-card">
+                    <div className="agreement-card-header">
+                      <div className="agreement-card-title">{a.ipp_name}</div>
+                      <div className="agreement-card-badge">₹{a.ipp_vc?.toFixed(2)}/Unit</div>
+                    </div>
+                    <div className="agreement-card-body">
+                      <div className="agreement-transfer-line">
+                        <span className="transfer-label">Tied UNL TPS</span>
+                        <span className="transfer-value">{a.unl_tps_name}</span>
+                      </div>
+                      <div className="agreement-transfer-line">
+                        <span className="transfer-label">Current VC</span>
+                        <span className="transfer-value" style={{ fontFamily: "var(--font-mono)" }}>₹{a.unl_vc?.toFixed(2)}/Unit</span>
+                      </div>
+                      {a.target_vc && (
+                        <div className="agreement-transfer-line target">
+                          <span className="transfer-label">Target VC</span>
+                          <span className="transfer-value target-val" style={{ fontFamily: "var(--font-mono)" }}>₹{a.target_vc.toFixed(2)}/Unit</span>
+                        </div>
+                      )}
+                      {a.tied_ipp_details && (
+                        <div className="agreement-location">
+                          📍 {a.tied_ipp_details}
+                        </div>
+                      )}
+                      {a.minimization_rule && (
+                        <div className="agreement-rules-box">
+                          <div className="rules-title">Minimization Rule / Action Plan</div>
+                          <p className="rules-text">{a.minimization_rule}</p>
+                        </div>
+                      )}
+                    </div>
+                    <div className="agreement-card-footer">
+                      <span>Validity: {a.period_start} to {a.period_end}</span>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

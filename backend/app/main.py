@@ -67,6 +67,7 @@ app.add_middleware(
 
 _prefix = settings.api_v1_prefix
 
+app.include_router(health_router)
 app.include_router(health_router, prefix=_prefix)
 app.include_router(master_data_router, prefix=_prefix)
 app.include_router(daily_stock_router, prefix=_prefix)

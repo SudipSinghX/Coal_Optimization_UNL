@@ -21,9 +21,14 @@
  *
  * @type {string}
  */
-export const apiBase = (
+const rawApiBase = (
   import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:8001/api/v1"
 ).replace(/\/+$/, ""); // strip any trailing slash
+
+// Ensure the base URL includes the /api/v1 prefix if not already present
+export const apiBase = rawApiBase.endsWith("/api/v1")
+  ? rawApiBase
+  : `${rawApiBase}/api/v1`;
 
 // --- Site Access Password Gate In-Memory Store & Fetch Interceptor ---
 let siteAccessPassword = "";

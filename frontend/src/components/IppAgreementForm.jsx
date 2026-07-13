@@ -72,8 +72,7 @@ const INITIAL_AGREEMENTS = [
 
 const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:8000";
 
-export default function IppAgreementForm() {
-  const [agreements, setAgreements] = useState(INITIAL_AGREEMENTS);
+export default function IppAgreementForm({ agreements, onAgreementSaved }) {
   const [form, setForm] = useState({
     ipp_name: "",
     ipp_vc: "",
@@ -87,24 +86,6 @@ export default function IppAgreementForm() {
     period_end: new Date(Date.now() + 14 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10)
   });
   const [status, setStatus] = useState(null);
-
-  // Fetch agreements from local backend on mount
-  useEffect(() => {
-    async function loadAgreements() {
-      try {
-        const resp = await fetch(`${API_BASE}/api/records/ipp-agreements`);
-        if (resp.ok) {
-          const data = await resp.json();
-          if (data && data.length > 0) {
-            setAgreements(data);
-          }
-        }
-      } catch (err) {
-        console.warn("Could not load agreements from API, falling back to static lists:", err.message);
-      }
-    }
-    loadAgreements();
-  }, []);
 
   const update = (k) => (e) => setForm({ ...form, [k]: e.target.value });
 
@@ -140,7 +121,7 @@ export default function IppAgreementForm() {
         throw new Error(errData.detail || `Server responded with ${resp.status}`);
       }
 
-      setAgreements([newAgreement, ...agreements]);
+      onAgreementSaved(newAgreement);
       setStatus("✓ Agreement saved successfully.");
       
       // Reset form fields
@@ -227,47 +208,6 @@ export default function IppAgreementForm() {
         )}
       </form>
 
-      <div style={{ marginTop: 20 }}>
-        <h3 style={{ fontSize: 16, fontWeight: 700, color: "var(--heading-primary)", marginBottom: 12 }}>Active Reference Agreements</h3>
-        <div style={{ overflowX: "auto" }}>
-          <table className="data-table">
-            <thead>
-              <tr>
-                <th>IPP TPS (VC)</th>
-                <th>UNL TPS (VC)</th>
-                <th>Tied IPP & Location</th>
-                <th>Target VC</th>
-                <th>Minimization Rule / Action Plan</th>
-              </tr>
-            </thead>
-            <tbody>
-              {agreements.map((a, i) => (
-                <tr key={i}>
-                  <td style={{ fontWeight: 700 }}>
-                    {a.ipp_name}
-                    <div style={{ fontSize: 11, color: "var(--ink-muted)", fontFamily: "var(--font-mono)", marginTop: 2 }}>
-                      ₹{a.ipp_vc?.toFixed(2)}/Unit
-                    </div>
-                  </td>
-                  <td style={{ fontWeight: 700 }}>
-                    {a.unl_tps_name}
-                    <div style={{ fontSize: 11, color: "var(--ink-muted)", fontFamily: "var(--font-mono)", marginTop: 2 }}>
-                      ₹{a.unl_vc?.toFixed(2)}/Unit
-                    </div>
-                  </td>
-                  <td>{a.tied_ipp_details || "—"}</td>
-                  <td style={{ fontWeight: 700, color: "var(--teal)", fontFamily: "var(--font-mono)" }}>
-                    {a.target_vc ? `₹${a.target_vc.toFixed(2)}` : "—"}
-                  </td>
-                  <td style={{ fontSize: 12, lineHeight: 1.4, color: "var(--ink-muted)", fontFamily: "var(--font-body)" }}>
-                    {a.minimization_rule || "—"}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
     </div>
   );
 }

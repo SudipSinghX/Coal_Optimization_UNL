@@ -1461,3 +1461,170 @@ body::before {
   100% { transform: rotate(360deg); }
 }
 
+/* ═══════════════════════════════════════════
+   DATA ENTRY STYLES (NEW RESPONSIVE LAYOUTS)
+   ═══════════════════════════════════════════ */
+.forms-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  align-items: stretch;
+}
+
+@media (min-width: 1024px) {
+  .forms-layout-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.agreements-section {
+  margin-top: 12px;
+}
+
+.agreements-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .agreements-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+  .agreements-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.agreement-card {
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  transition: all 0.2s ease;
+}
+
+.agreement-card:hover {
+  border-color: var(--border-bright);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  background: var(--surface);
+}
+
+.agreement-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 12px;
+}
+
+.agreement-card-title {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--heading-primary);
+  line-height: 1.3;
+}
+
+.agreement-card-badge {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--amber);
+  background: var(--amber-dim);
+  border: 1px solid rgba(217, 119, 6, 0.2);
+  padding: 4px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.agreement-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.agreement-transfer-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+}
+
+.agreement-transfer-line.target {
+  background: rgba(13, 148, 136, 0.05);
+  border: 1px dashed rgba(13, 148, 136, 0.3);
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin-top: 4px;
+}
+
+.transfer-label {
+  color: var(--ink-muted);
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.transfer-value {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.transfer-value.target-val {
+  color: var(--teal);
+}
+
+.agreement-location {
+  font-size: 12px;
+  color: var(--ink-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-2);
+  padding: 4px 8px;
+  border-radius: 6px;
+  width: fit-content;
+}
+
+.agreement-rules-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-top: 4px;
+}
+
+.rules-title {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  margin-bottom: 4px;
+}
+
+.rules-text {
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--ink-muted);
+}
+
+.agreement-card-footer {
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+  font-size: 11px;
+  color: var(--ink-dim);
+  display: flex;
+  justify-content: space-between;
+}
+
+
