@@ -7,6 +7,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.config import get_settings
+from app.core.database import probe_database
 from app.core.exceptions import register_exception_handlers
 from app.modules.audit.router import router as audit_router
 from app.modules.constraints.router import router as constraints_router
@@ -32,6 +33,8 @@ logging.basicConfig(level=settings.log_level, format="%(asctime)s %(levelname)s 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    # Probe database connection at startup — surfaces misconfig in service logs immediately.
+    probe_database()
     start_scheduler()
     yield
     shutdown_scheduler()
