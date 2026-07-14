@@ -1,0 +1,105 @@
+COAL DATA FILE SEGREGATION REPORT
+======================================
+Generated (UTC): 2026-07-14T10:30:37.088230+00:00
+
+Task scope: File segregation only. No database used and no source file content modified.
+
+SOURCE ARCHIVES
+- Panki Extn Fuel Data March'26(2).zip
+- drive-download-20260707T082534Z-3-001(2).zip
+
+SUMMARY
+- Total Source Files: 29
+- Unique Files: 24
+- Fsa Files: 1
+- Variable Cost Files: 12
+- Daily Stock Files: 11
+- Unclassified Files: 0
+- Duplicate Files: 5
+
+CLASSIFICATION DECISIONS
+- FSA: dedicated FSA/Bridge Linkage workbook.
+- Variable Cost: landed-cost, weighted fuel-cost/GCV certificates, VC reports, VC workbook and cost matrix.
+- Daily Stock: daily coal/oil and LDO-LSHS reports containing opening balance, receipts, consumption and closing balance.
+- Exact-content duplicates: separated using SHA-256; one canonical copy retained in its business folder.
+
+FSA
+---
+- FSA and Bridge Linkage Details 2026-27.xlsx -> fsa/spreadsheets/FSA and Bridge Linkage Details 2026-27.xlsx [HIGH]
+
+VARIABLE COST
+-------------
+- Action Plan to reduce VC 2026 V1.1.pdf -> variable_cost/pdf/Action Plan to reduce VC 2026 V1.1.pdf [HIGH]
+- AnparaTPS-LandedCost-(16-31)March26 (1).pdf -> variable_cost/pdf/AnparaTPS-LandedCost-(16-31)March26 (1).pdf [HIGH]
+  Note: Fuel-data certificate contains landed-cost/GCV inputs used for variable-cost calculations.
+- Coal Cost as per Flexi Matrix April 2026.xlsx -> variable_cost/spreadsheets/Coal Cost as per Flexi Matrix April 2026.xlsx [HIGH]
+  Note: Mixed workbook containing linkage references and variable/landed-cost calculations; filed under Variable Cost as its primary operational use.
+- Harduaganj fuel data Mar'26.pdf -> variable_cost/pdf/Harduaganj fuel data Mar'26.pdf [HIGH]
+  Note: Fuel-data certificate contains landed-cost/GCV inputs used for variable-cost calculations.
+- Jawaharpur Landed Cost March'26.pdf -> variable_cost/pdf/Jawaharpur Landed Cost March'26.pdf [HIGH]
+  Note: Fuel-data certificate contains landed-cost/GCV inputs used for variable-cost calculations.
+- Obra Fuel Data Feb'26_01.03.2026 to 15.03.2026.pdf -> variable_cost/pdf/Obra Fuel Data Feb'26_01.03.2026 to 15.03.2026.pdf [HIGH]
+  Note: Fuel-data certificate contains landed-cost/GCV inputs used for variable-cost calculations.
+- Panki Extn Fuel Data March'26.pdf -> variable_cost/pdf/Panki Extn Fuel Data March'26.pdf [HIGH]
+  Note: Fuel-data certificate contains landed-cost/GCV inputs used for variable-cost calculations.
+- Parichha Landed Cost March_26 dt 16-03-26 to 31-03-26.pdf -> variable_cost/pdf/Parichha Landed Cost March_26 dt 16-03-26 to 31-03-26.pdf [HIGH]
+  Note: Fuel-data certificate contains landed-cost/GCV inputs used for variable-cost calculations.
+- Parichha Landed Cost March_26_dt 01.03 to 15.03.pdf -> variable_cost/pdf/Parichha Landed Cost March_26_dt 01.03 to 15.03.pdf [HIGH]
+  Note: Fuel-data certificate contains landed-cost/GCV inputs used for variable-cost calculations.
+- Revised_Harduaganj fuel data Mar_26.pdf -> variable_cost/pdf/Revised_Harduaganj fuel data Mar_26.pdf [HIGH]
+  Note: Fuel-data certificate contains landed-cost/GCV inputs used for variable-cost calculations.
+- Revised_Obra Fuel Data Feb_26_01.03.2026 to 31.03.2026.pdf -> variable_cost/pdf/Revised_Obra Fuel Data Feb_26_01.03.2026 to 31.03.2026.pdf [HIGH]
+  Note: Fuel-data certificate contains landed-cost/GCV inputs used for variable-cost calculations.
+- VC for last 5 months for UNL and IPPs.xlsx -> variable_cost/spreadsheets/VC for last 5 months for UNL and IPPs.xlsx [HIGH]
+
+DAILY STOCK
+-----------
+- Daily LDO-LSHS Report-1 (10).pdf -> daily_stock/pdf/Daily LDO-LSHS Report-1 (10).pdf [HIGH]
+  Note: Daily fuel-oil stock report grouped under Daily Stock.
+- Daily LDO-LSHS Report-1 (3).pdf -> daily_stock/pdf/Daily LDO-LSHS Report-1 (3).pdf [HIGH]
+  Note: Daily fuel-oil stock report grouped under Daily Stock.
+- Daily LDO-LSHS Report-1 (4).pdf -> daily_stock/pdf/Daily LDO-LSHS Report-1 (4).pdf [HIGH]
+  Note: Daily fuel-oil stock report grouped under Daily Stock.
+- Daily LDO-LSHS Report-1 (6).pdf -> daily_stock/pdf/Daily LDO-LSHS Report-1 (6).pdf [HIGH]
+  Note: Daily fuel-oil stock report grouped under Daily Stock.
+- Daily LDO-LSHS Report-1 (8).pdf -> daily_stock/pdf/Daily LDO-LSHS Report-1 (8).pdf [HIGH]
+  Note: Daily fuel-oil stock report grouped under Daily Stock.
+- daily oil report (4).pdf -> daily_stock/pdf/daily oil report (4).pdf [HIGH]
+  Note: Daily fuel-oil stock report grouped under Daily Stock.
+- daily oil report (5).pdf -> daily_stock/pdf/daily oil report (5).pdf [HIGH]
+  Note: Daily fuel-oil stock report grouped under Daily Stock.
+- daily oil report (6).pdf -> daily_stock/pdf/daily oil report (6).pdf [HIGH]
+  Note: Daily fuel-oil stock report grouped under Daily Stock.
+- daily oil report (7).pdf -> daily_stock/pdf/daily oil report (7).pdf [HIGH]
+  Note: Daily fuel-oil stock report grouped under Daily Stock.
+- WhatsApp Image 2026-07-07 at 12.46.57 PM.jpeg -> daily_stock/other/WhatsApp Image 2026-07-07 at 12.46.57 PM.jpeg [HIGH]
+  Note: Image contains daily coal and fuel-oil stock data.
+- WhatsApp Image 2026-07-07 at 12.47.01 PM.jpeg -> daily_stock/other/WhatsApp Image 2026-07-07 at 12.47.01 PM.jpeg [HIGH]
+  Note: Image contains daily coal and fuel-oil stock data.
+
+UNCLASSIFIED
+------------
+(none)
+
+DUPLICATES
+----------
+- Daily LDO-LSHS Report-1 (5).pdf -> duplicates/source1_Daily LDO-LSHS Report-1 (5).pdf
+  Duplicate of: Daily LDO-LSHS Report-1 (3).pdf
+  SHA-256: b740815790c9806a3b6378b202daa093b3eb2713b4ad801ce408364525e1ca73
+- Daily LDO-LSHS Report-1 (7).pdf -> duplicates/source1_Daily LDO-LSHS Report-1 (7).pdf
+  Duplicate of: Daily LDO-LSHS Report-1 (6).pdf
+  SHA-256: 75752aa58333cee4eba93be153d94098146b6c1409ffb7dec42bdc2ad34d66dc
+- Daily LDO-LSHS Report-1 (9).pdf -> duplicates/source1_Daily LDO-LSHS Report-1 (9).pdf
+  Duplicate of: Daily LDO-LSHS Report-1 (8).pdf
+  SHA-256: 807121ca9186242495a41f6576c54944041eff60ed660ad7b93a6c7ecd03c9bd
+- Jawaharpur Landed Cost March'26 (1).pdf -> duplicates/source1_Jawaharpur Landed Cost March'26 (1).pdf
+  Duplicate of: Jawaharpur Landed Cost March'26.pdf
+  SHA-256: 5c95cc4461a2634370d7219fe7e272836d3a3f9cde20d7659a306b1de054c0de
+- Obra Fuel Data Feb'26_01.03.2026 to 15.03.2026 (1).pdf -> duplicates/source1_Obra Fuel Data Feb'26_01.03.2026 to 15.03.2026 (1).pdf
+  Duplicate of: Obra Fuel Data Feb'26_01.03.2026 to 15.03.2026.pdf
+  SHA-256: 1ff3b7874146be817639c22bfbb666a82a9805168ef4bb712e63f1d9ccd95807
+
+IMPORTANT
+- The original ZIP archives and files were left unchanged.
+- No MongoDB, PostgreSQL or any other database was accessed.
+- Coal Cost as per Flexi Matrix April 2026.xlsx contains both linkage references and variable-cost calculations; it is placed under Variable Cost because that is its primary analytical purpose.

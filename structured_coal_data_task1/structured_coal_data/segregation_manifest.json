@@ -1,0 +1,752 @@
+{
+  "task": "Task 1 - File segregation only",
+  "database_used": false,
+  "original_files_modified": false,
+  "generated_at_utc": "2026-07-14T10:30:37.088230+00:00",
+  "source_archives": [
+    "Panki Extn Fuel Data March'26(2).zip",
+    "drive-download-20260707T082534Z-3-001(2).zip"
+  ],
+  "output_structure": "structured_coal_data",
+  "summary": {
+    "total_source_files": 29,
+    "unique_files": 24,
+    "fsa_files": 1,
+    "variable_cost_files": 12,
+    "daily_stock_files": 11,
+    "unclassified_files": 0,
+    "duplicate_files": 5
+  },
+  "files": [
+    {
+      "source_archive": "Panki Extn Fuel Data March'26(2).zip",
+      "original_filename": "Action Plan to reduce VC 2026 V1.1.pdf",
+      "original_relative_path": "Action Plan to reduce VC 2026 V1.1.pdf",
+      "output_filename": "Action Plan to reduce VC 2026 V1.1.pdf",
+      "output_relative_path": "variable_cost/pdf/Action Plan to reduce VC 2026 V1.1.pdf",
+      "file_extension": ".pdf",
+      "mime_type": "application/pdf",
+      "file_size_bytes": 75603,
+      "sha256_hash": "bfb6a1a576d845911ea4bbb1eff91493413fb313123d48ddf54bee17bc4bd04a",
+      "detected_category": "VARIABLE_COST",
+      "classification_confidence": "HIGH",
+      "classification_method": "FILENAME_AND_PDF_CONTENT",
+      "matched_keywords_or_indicators": [
+        "VC",
+        "Variable Charges"
+      ],
+      "duplicate": false,
+      "duplicate_of": null,
+      "status": "SEGREGATED",
+      "notes": []
+    },
+    {
+      "source_archive": "Panki Extn Fuel Data March'26(2).zip",
+      "original_filename": "AnparaTPS-LandedCost-(16-31)March26 (1).pdf",
+      "original_relative_path": "AnparaTPS-LandedCost-(16-31)March26 (1).pdf",
+      "output_filename": "AnparaTPS-LandedCost-(16-31)March26 (1).pdf",
+      "output_relative_path": "variable_cost/pdf/AnparaTPS-LandedCost-(16-31)March26 (1).pdf",
+      "file_extension": ".pdf",
+      "mime_type": "application/pdf",
+      "file_size_bytes": 16425590,
+      "sha256_hash": "96b194043fa6f85dfcd36c0ea06702de03d68becd571cc09535a1a1a7379575e",
+      "detected_category": "VARIABLE_COST",
+      "classification_confidence": "HIGH",
+      "classification_method": "FILENAME_AND_PDF_VISUAL_CONTENT",
+      "matched_keywords_or_indicators": [
+        "Weighted Average Landed Cost",
+        "GCV",
+        "Fuel Cost"
+      ],
+      "duplicate": false,
+      "duplicate_of": null,
+      "status": "SEGREGATED",
+      "notes": [
+        "Fuel-data certificate contains landed-cost/GCV inputs used for variable-cost calculations."
+      ]
+    },
+    {
+      "source_archive": "Panki Extn Fuel Data March'26(2).zip",
+      "original_filename": "Coal Cost as per Flexi Matrix April 2026.xlsx",
+      "original_relative_path": "Coal Cost as per Flexi Matrix April 2026.xlsx",
+      "output_filename": "Coal Cost as per Flexi Matrix April 2026.xlsx",
+      "output_relative_path": "variable_cost/spreadsheets/Coal Cost as per Flexi Matrix April 2026.xlsx",
+      "file_extension": ".xlsx",
+      "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "file_size_bytes": 44807,
+      "sha256_hash": "725ce2dba018a4daeeb52e1b7ea8a849c861ee497f2641aabfbd0d0f65c57259",
+      "detected_category": "VARIABLE_COST",
+      "classification_confidence": "HIGH",
+      "classification_method": "WORKBOOK_SHEETS_AND_HEADERS",
+      "matched_keywords_or_indicators": [
+        "Variable Cost",
+        "Landed Cost",
+        "Linkage"
+      ],
+      "duplicate": false,
+      "duplicate_of": null,
+      "status": "SEGREGATED",
+      "notes": [
+        "Mixed workbook containing linkage references and variable/landed-cost calculations; filed under Variable Cost as its primary operational use."
+      ]
+    },
+    {
+      "source_archive": "Panki Extn Fuel Data March'26(2).zip",
+      "original_filename": "Daily LDO-LSHS Report-1 (10).pdf",
+      "original_relative_path": "Daily LDO-LSHS Report-1 (10).pdf",
+      "output_filename": "Daily LDO-LSHS Report-1 (10).pdf",
+      "output_relative_path": "daily_stock/pdf/Daily LDO-LSHS Report-1 (10).pdf",
+      "file_extension": ".pdf",
+      "mime_type": "application/pdf",
+      "file_size_bytes": 224096,
+      "sha256_hash": "9152f962efbb6324117789fa43b5a0c372f94b75334d39b69a585652b85cc0d6",
+      "detected_category": "DAILY_STOCK",
+      "classification_confidence": "HIGH",
+      "classification_method": "FILENAME_AND_PDF_CONTENT",
+      "matched_keywords_or_indicators": [
+        "Opening Balance",
+        "Receipt",
+        "Consumption",
+        "Closing Balance"
+      ],
+      "duplicate": false,
+      "duplicate_of": null,
+      "status": "SEGREGATED",
+      "notes": [
+        "Daily fuel-oil stock report grouped under Daily Stock."
+      ]
+    },
+    {
+      "source_archive": "Panki Extn Fuel Data March'26(2).zip",
+      "original_filename": "Daily LDO-LSHS Report-1 (3).pdf",
+      "original_relative_path": "Daily LDO-LSHS Report-1 (3).pdf",
+      "output_filename": "Daily LDO-LSHS Report-1 (3).pdf",
+      "output_relative_path": "daily_stock/pdf/Daily LDO-LSHS Report-1 (3).pdf",
+      "file_extension": ".pdf",
+      "mime_type": "application/pdf",
+      "file_size_bytes": 224485,
+      "sha256_hash": "b740815790c9806a3b6378b202daa093b3eb2713b4ad801ce408364525e1ca73",
+      "detected_category": "DAILY_STOCK",
+      "classification_confidence": "HIGH",
+      "classification_method": "FILENAME_AND_PDF_CONTENT",
+      "matched_keywords_or_indicators": [
+        "Opening Balance",
+        "Receipt",
+        "Consumption",
+        "Closing Balance"
+      ],
+      "duplicate": false,
+      "duplicate_of": null,
+      "status": "SEGREGATED",
+      "notes": [
+        "Daily fuel-oil stock report grouped under Daily Stock."
+      ]
+    },
+    {
+      "source_archive": "Panki Extn Fuel Data March'26(2).zip",
+      "original_filename": "Daily LDO-LSHS Report-1 (4).pdf",
+      "original_relative_path": "Daily LDO-LSHS Report-1 (4).pdf",
+      "output_filename": "Daily LDO-LSHS Report-1 (4).pdf",
+      "output_relative_path": "daily_stock/pdf/Daily LDO-LSHS Report-1 (4).pdf",
+      "file_extension": ".pdf",
+      "mime_type": "application/pdf",
+      "file_size_bytes": 224526,
+      "sha256_hash": "63de70d3a3d352854eb31f4bafd2f5c0e8ba8b081e87df44e3755b3060b27cac",
+      "detected_category": "DAILY_STOCK",
+      "classification_confidence": "HIGH",
+      "classification_method": "FILENAME_AND_PDF_CONTENT",
+      "matched_keywords_or_indicators": [
+        "Opening Balance",
+        "Receipt",
+        "Consumption",
+        "Closing Balance"
+      ],
+      "duplicate": false,
+      "duplicate_of": null,
+      "status": "SEGREGATED",
+      "notes": [
+        "Daily fuel-oil stock report grouped under Daily Stock."
+      ]
+    },
+    {
+      "source_archive": "Panki Extn Fuel Data March'26(2).zip",
+      "original_filename": "Daily LDO-LSHS Report-1 (5).pdf",
+      "original_relative_path": "Daily LDO-LSHS Report-1 (5).pdf",
+      "output_filename": "source1_Daily LDO-LSHS Report-1 (5).pdf",
+      "output_relative_path": "duplicates/source1_Daily LDO-LSHS Report-1 (5).pdf",
+      "file_extension": ".pdf",
+      "mime_type": "application/pdf",
+      "file_size_bytes": 224485,
+      "sha256_hash": "b740815790c9806a3b6378b202daa093b3eb2713b4ad801ce408364525e1ca73",
+      "detected_category": "DAILY_STOCK",
+      "classification_confidence": "HIGH",
+      "classification_method": "FILENAME_AND_PDF_CONTENT",
+      "matched_keywords_or_indicators": [
+        "Opening Balance",
+        "Receipt",
+        "Consumption",
+        "Closing Balance"
+      ],
+      "duplicate": true,
+      "duplicate_of": "Daily LDO-LSHS Report-1 (3).pdf",
+      "status": "DUPLICATE_SEPARATED",
+      "notes": [
+        "Daily fuel-oil stock report grouped under Daily Stock."
+      ]
+    },
+    {
+      "source_archive": "Panki Extn Fuel Data March'26(2).zip",
+      "original_filename": "Daily LDO-LSHS Report-1 (6).pdf",
+      "original_relative_path": "Daily LDO-LSHS Report-1 (6).pdf",
+      "output_filename": "Daily LDO-LSHS Report-1 (6).pdf",
+      "output_relative_path": "daily_stock/pdf/Daily LDO-LSHS Report-1 (6).pdf",
+      "file_extension": ".pdf",
+      "mime_type": "application/pdf",
+      "file_size_bytes": 224541,
+      "sha256_hash": "75752aa58333cee4eba93be153d94098146b6c1409ffb7dec42bdc2ad34d66dc",
+      "detected_category": "DAILY_STOCK",
+      "classification_confidence": "HIGH",
+      "classification_method": "FILENAME_AND_PDF_CONTENT",
+      "matched_keywords_or_indicators": [
+        "Opening Balance",
+        "Receipt",
+        "Consumption",
+        "Closing Balance"
+      ],
+      "duplicate": false,
+      "duplicate_of": null,
+      "status": "SEGREGATED",
+      "notes": [
+        "Daily fuel-oil stock report grouped under Daily Stock."
+      ]
+    },
+    {
+      "source_archive": "Panki Extn Fuel Data March'26(2).zip",
+      "original_filename": "Daily LDO-LSHS Report-1 (7).pdf",
+      "original_relative_path": "Daily LDO-LSHS Report-1 (7).pdf",
+      "output_filename": "source1_Daily LDO-LSHS Report-1 (7).pdf",
+      "output_relative_path": "duplicates/source1_Daily LDO-LSHS Report-1 (7).pdf",
+      "file_extension": ".pdf",
+      "mime_type": "application/pdf",
+      "file_size_bytes": 224541,
+      "sha256_hash": "75752aa58333cee4eba93be153d94098146b6c1409ffb7dec42bdc2ad34d66dc",
+      "detected_category": "DAILY_STOCK",
+      "classification_confidence": "HIGH",
+      "classification_method": "FILENAME_AND_PDF_CONTENT",
+      "matched_keywords_or_indicators": [
+        "Opening Balance",
+        "Receipt",
+        "Consumption",
+        "Closing Balance"
+      ],
+      "duplicate": true,
+      "duplicate_of": "Daily LDO-LSHS Report-1 (6).pdf",
+      "status": "DUPLICATE_SEPARATED",
+      "notes": [
+        "Daily fuel-oil stock report grouped under Daily Stock."
+      ]
+    },
+    {
+      "source_archive": "Panki Extn Fuel Data March'26(2).zip",
+      "original_filename": "Daily LDO-LSHS Report-1 (8).pdf",
+      "original_relative_path": "Daily LDO-LSHS Report-1 (8).pdf",
+      "output_filename": "Daily LDO-LSHS Report-1 (8).pdf",
+      "output_relative_path": "daily_stock/pdf/Daily LDO-LSHS Report-1 (8).pdf",
+      "file_extension": ".pdf",
+      "mime_type": "application/pdf",
+      "file_size_bytes": 226344,
+      "sha256_hash": "807121ca9186242495a41f6576c54944041eff60ed660ad7b93a6c7ecd03c9bd",
+      "detected_category": "DAILY_STOCK",
+      "classification_confidence": "HIGH",
+      "classification_method": "FILENAME_AND_PDF_CONTENT",
+      "matched_keywords_or_indicators": [
+        "Opening Balance",
+        "Receipt",
+        "Consumption",
+        "Closing Balance"
+      ],
+      "duplicate": false,
+      "duplicate_of": null,
+      "status": "SEGREGATED",
+      "notes": [
+        "Daily fuel-oil stock report grouped under Daily Stock."
+      ]
+    },
+    {
+      "source_archive": "Panki Extn Fuel Data March'26(2).zip",
+      "original_filename": "Daily LDO-LSHS Report-1 (9).pdf",
+      "original_relative_path": "Daily LDO-LSHS Report-1 (9).pdf",
+      "output_filename": "source1_Daily LDO-LSHS Report-1 (9).pdf",
+      "output_relative_path": "duplicates/source1_Daily LDO-LSHS Report-1 (9).pdf",
+      "file_extension": ".pdf",
+      "mime_type": "application/pdf",
+      "file_size_bytes": 226344,
+      "sha256_hash": "807121ca9186242495a41f6576c54944041eff60ed660ad7b93a6c7ecd03c9bd",
+      "detected_category": "DAILY_STOCK",
+      "classification_confidence": "HIGH",
+      "classification_method": "FILENAME_AND_PDF_CONTENT",
+      "matched_keywords_or_indicators": [
+        "Opening Balance",
+        "Receipt",
+        "Consumption",
+        "Closing Balance"
+      ],
+      "duplicate": true,
+      "duplicate_of": "Daily LDO-LSHS Report-1 (8).pdf",
+      "status": "DUPLICATE_SEPARATED",
+      "notes": [
+        "Daily fuel-oil stock report grouped under Daily Stock."
+      ]
+    },
+    {
+      "source_archive": "Panki Extn Fuel Data March'26(2).zip",
+      "original_filename": "daily oil report (4).pdf",
+      "original_relative_path": "daily oil report (4).pdf",
+      "output_filename": "daily oil report (4).pdf",
+      "output_relative_path": "daily_stock/pdf/daily oil report (4).pdf",
+      "file_extension": ".pdf",
+      "mime_type": "application/pdf",
+      "file_size_bytes": 218413,
+      "sha256_hash": "74fd96266c483677f8ba8e57d087919aae31cda0126d82d4295fe04fe291dc02",
+      "detected_category": "DAILY_STOCK",
+      "classification_confidence": "HIGH",
+      "classification_method": "FILENAME_AND_PDF_CONTENT",
+      "matched_keywords_or_indicators": [
+        "Opening Balance",
+        "Receipt",
+        "Consumption",
+        "Closing Balance"
+      ],
+      "duplicate": false,
+      "duplicate_of": null,
+      "status": "SEGREGATED",
+      "notes": [
+        "Daily fuel-oil stock report grouped under Daily Stock."
+      ]
+    },
+    {
+      "source_archive": "Panki Extn Fuel Data March'26(2).zip",
+      "original_filename": "daily oil report (5).pdf",
+      "original_relative_path": "daily oil report (5).pdf",
+      "output_filename": "daily oil report (5).pdf",
+      "output_relative_path": "daily_stock/pdf/daily oil report (5).pdf",
+      "file_extension": ".pdf",
+      "mime_type": "application/pdf",
+      "file_size_bytes": 219581,
+      "sha256_hash": "80237e6769e7b794a5aac2e5c69cfca4e64748dbdc38f0c1d66cc73e514cb8a6",
+      "detected_category": "DAILY_STOCK",
+      "classification_confidence": "HIGH",
+      "classification_method": "FILENAME_AND_PDF_CONTENT",
+      "matched_keywords_or_indicators": [
+        "Opening Balance",
+        "Receipt",
+        "Consumption",
+        "Closing Balance"
+      ],
+      "duplicate": false,
+      "duplicate_of": null,
+      "status": "SEGREGATED",
+      "notes": [
+        "Daily fuel-oil stock report grouped under Daily Stock."
+      ]
+    },
+    {
+      "source_archive": "Panki Extn Fuel Data March'26(2).zip",
+      "original_filename": "daily oil report (6).pdf",
+      "original_relative_path": "daily oil report (6).pdf",
+      "output_filename": "daily oil report (6).pdf",
+      "output_relative_path": "daily_stock/pdf/daily oil report (6).pdf",
+      "file_extension": ".pdf",
+      "mime_type": "application/pdf",
+      "file_size_bytes": 218265,
+      "sha256_hash": "155ac5f0810488e0d00e3f300711b4e290c74fc89d0e550a515ddc1399a1f6a4",
+      "detected_category": "DAILY_STOCK",
+      "classification_confidence": "HIGH",
+      "classification_method": "FILENAME_AND_PDF_CONTENT",
+      "matched_keywords_or_indicators": [
+        "Opening Balance",
+        "Receipt",
+        "Consumption",
+        "Closing Balance"
+      ],
+      "duplicate": false,
+      "duplicate_of": null,
+      "status": "SEGREGATED",
+      "notes": [
+        "Daily fuel-oil stock report grouped under Daily Stock."
+      ]
+    },
+    {
+      "source_archive": "Panki Extn Fuel Data March'26(2).zip",
+      "original_filename": "daily oil report (7).pdf",
+      "original_relative_path": "daily oil report (7).pdf",
+      "output_filename": "daily oil report (7).pdf",
+      "output_relative_path": "daily_stock/pdf/daily oil report (7).pdf",
+      "file_extension": ".pdf",
+      "mime_type": "application/pdf",
+      "file_size_bytes": 219070,
+      "sha256_hash": "2d68cedefee45e71c7d009fa0c9e38e778a51dbbcec193bf6af3511e4cc2bfa2",
+      "detected_category": "DAILY_STOCK",
+      "classification_confidence": "HIGH",
+      "classification_method": "FILENAME_AND_PDF_CONTENT",
+      "matched_keywords_or_indicators": [
+        "Opening Balance",
+        "Receipt",
+        "Consumption",
+        "Closing Balance"
+      ],
+      "duplicate": false,
+      "duplicate_of": null,
+      "status": "SEGREGATED",
+      "notes": [
+        "Daily fuel-oil stock report grouped under Daily Stock."
+      ]
+    },
+    {
+      "source_archive": "Panki Extn Fuel Data March'26(2).zip",
+      "original_filename": "FSA and Bridge Linkage Details 2026-27.xlsx",
+      "original_relative_path": "FSA and Bridge Linkage Details 2026-27.xlsx",
+      "output_filename": "FSA and Bridge Linkage Details 2026-27.xlsx",
+      "output_relative_path": "fsa/spreadsheets/FSA and Bridge Linkage Details 2026-27.xlsx",
+      "file_extension": ".xlsx",
+      "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "file_size_bytes": 11776,
+      "sha256_hash": "bd230368e2748c550a6cd272d2b71eb966d217d07042db4f68f08a279c482c4d",
+      "detected_category": "FSA",
+      "classification_confidence": "HIGH",
+      "classification_method": "FILENAME_AND_SPREADSHEET_HEADERS",
+      "matched_keywords_or_indicators": [
+        "FSA",
+        "Bridge Linkage",
+        "ACQ"
+      ],
+      "duplicate": false,
+      "duplicate_of": null,
+      "status": "SEGREGATED",
+      "notes": []
+    },
+    {
+      "source_archive": "Panki Extn Fuel Data March'26(2).zip",
+      "original_filename": "Harduaganj fuel data Mar'26.pdf",
+      "original_relative_path": "Harduaganj fuel data Mar'26.pdf",
+      "output_filename": "Harduaganj fuel data Mar'26.pdf",
+      "output_relative_path": "variable_cost/pdf/Harduaganj fuel data Mar'26.pdf",
+      "file_extension": ".pdf",
+      "mime_type": "application/pdf",
+      "file_size_bytes": 7323753,
+      "sha256_hash": "8f24817bfdf63b3045bffd3d78503490fd2d39b37cfa3f8ef3c87f643e31bc07",
+      "detected_category": "VARIABLE_COST",
+      "classification_confidence": "HIGH",
+      "classification_method": "FILENAME_AND_PDF_VISUAL_CONTENT",
+      "matched_keywords_or_indicators": [
+        "Weighted Average Landed Cost",
+        "GCV",
+        "Fuel Cost"
+      ],
+      "duplicate": false,
+      "duplicate_of": null,
+      "status": "SEGREGATED",
+      "notes": [
+        "Fuel-data certificate contains landed-cost/GCV inputs used for variable-cost calculations."
+      ]
+    },
+    {
+      "source_archive": "Panki Extn Fuel Data March'26(2).zip",
+      "original_filename": "Jawaharpur Landed Cost March'26 (1).pdf",
+      "original_relative_path": "Jawaharpur Landed Cost March'26 (1).pdf",
+      "output_filename": "source1_Jawaharpur Landed Cost March'26 (1).pdf",
+      "output_relative_path": "duplicates/source1_Jawaharpur Landed Cost March'26 (1).pdf",
+      "file_extension": ".pdf",
+      "mime_type": "application/pdf",
+      "file_size_bytes": 3154098,
+      "sha256_hash": "5c95cc4461a2634370d7219fe7e272836d3a3f9cde20d7659a306b1de054c0de",
+      "detected_category": "VARIABLE_COST",
+      "classification_confidence": "HIGH",
+      "classification_method": "FILENAME_AND_PDF_VISUAL_CONTENT",
+      "matched_keywords_or_indicators": [
+        "Weighted Average Landed Cost",
+        "GCV",
+        "Fuel Cost"
+      ],
+      "duplicate": true,
+      "duplicate_of": "Jawaharpur Landed Cost March'26.pdf",
+      "status": "DUPLICATE_SEPARATED",
+      "notes": [
+        "Fuel-data certificate contains landed-cost/GCV inputs used for variable-cost calculations."
+      ]
+    },
+    {
+      "source_archive": "Panki Extn Fuel Data March'26(2).zip",
+      "original_filename": "Jawaharpur Landed Cost March'26.pdf",
+      "original_relative_path": "Jawaharpur Landed Cost March'26.pdf",
+      "output_filename": "Jawaharpur Landed Cost March'26.pdf",
+      "output_relative_path": "variable_cost/pdf/Jawaharpur Landed Cost March'26.pdf",
+      "file_extension": ".pdf",
+      "mime_type": "application/pdf",
+      "file_size_bytes": 3154098,
+      "sha256_hash": "5c95cc4461a2634370d7219fe7e272836d3a3f9cde20d7659a306b1de054c0de",
+      "detected_category": "VARIABLE_COST",
+      "classification_confidence": "HIGH",
+      "classification_method": "FILENAME_AND_PDF_VISUAL_CONTENT",
+      "matched_keywords_or_indicators": [
+        "Weighted Average Landed Cost",
+        "GCV",
+        "Fuel Cost"
+      ],
+      "duplicate": false,
+      "duplicate_of": null,
+      "status": "SEGREGATED",
+      "notes": [
+        "Fuel-data certificate contains landed-cost/GCV inputs used for variable-cost calculations."
+      ]
+    },
+    {
+      "source_archive": "Panki Extn Fuel Data March'26(2).zip",
+      "original_filename": "Obra Fuel Data Feb'26_01.03.2026 to 15.03.2026 (1).pdf",
+      "original_relative_path": "Obra Fuel Data Feb'26_01.03.2026 to 15.03.2026 (1).pdf",
+      "output_filename": "source1_Obra Fuel Data Feb'26_01.03.2026 to 15.03.2026 (1).pdf",
+      "output_relative_path": "duplicates/source1_Obra Fuel Data Feb'26_01.03.2026 to 15.03.2026 (1).pdf",
+      "file_extension": ".pdf",
+      "mime_type": "application/pdf",
+      "file_size_bytes": 3215724,
+      "sha256_hash": "1ff3b7874146be817639c22bfbb666a82a9805168ef4bb712e63f1d9ccd95807",
+      "detected_category": "VARIABLE_COST",
+      "classification_confidence": "HIGH",
+      "classification_method": "FILENAME_AND_PDF_VISUAL_CONTENT",
+      "matched_keywords_or_indicators": [
+        "Weighted Average Landed Cost",
+        "GCV",
+        "Fuel Cost"
+      ],
+      "duplicate": true,
+      "duplicate_of": "Obra Fuel Data Feb'26_01.03.2026 to 15.03.2026.pdf",
+      "status": "DUPLICATE_SEPARATED",
+      "notes": [
+        "Fuel-data certificate contains landed-cost/GCV inputs used for variable-cost calculations."
+      ]
+    },
+    {
+      "source_archive": "Panki Extn Fuel Data March'26(2).zip",
+      "original_filename": "Obra Fuel Data Feb'26_01.03.2026 to 15.03.2026.pdf",
+      "original_relative_path": "Obra Fuel Data Feb'26_01.03.2026 to 15.03.2026.pdf",
+      "output_filename": "Obra Fuel Data Feb'26_01.03.2026 to 15.03.2026.pdf",
+      "output_relative_path": "variable_cost/pdf/Obra Fuel Data Feb'26_01.03.2026 to 15.03.2026.pdf",
+      "file_extension": ".pdf",
+      "mime_type": "application/pdf",
+      "file_size_bytes": 3215724,
+      "sha256_hash": "1ff3b7874146be817639c22bfbb666a82a9805168ef4bb712e63f1d9ccd95807",
+      "detected_category": "VARIABLE_COST",
+      "classification_confidence": "HIGH",
+      "classification_method": "FILENAME_AND_PDF_VISUAL_CONTENT",
+      "matched_keywords_or_indicators": [
+        "Weighted Average Landed Cost",
+        "GCV",
+        "Fuel Cost"
+      ],
+      "duplicate": false,
+      "duplicate_of": null,
+      "status": "SEGREGATED",
+      "notes": [
+        "Fuel-data certificate contains landed-cost/GCV inputs used for variable-cost calculations."
+      ]
+    },
+    {
+      "source_archive": "Panki Extn Fuel Data March'26(2).zip",
+      "original_filename": "Panki Extn Fuel Data March'26.pdf",
+      "original_relative_path": "Panki Extn Fuel Data March'26.pdf",
+      "output_filename": "Panki Extn Fuel Data March'26.pdf",
+      "output_relative_path": "variable_cost/pdf/Panki Extn Fuel Data March'26.pdf",
+      "file_extension": ".pdf",
+      "mime_type": "application/pdf",
+      "file_size_bytes": 4437884,
+      "sha256_hash": "ba4c98c280a8e8bdc55dbb74d1a7054e39e33a4fe6a2bda7726f6a8890ab8bde",
+      "detected_category": "VARIABLE_COST",
+      "classification_confidence": "HIGH",
+      "classification_method": "FILENAME_AND_PDF_VISUAL_CONTENT",
+      "matched_keywords_or_indicators": [
+        "Weighted Average Landed Cost",
+        "GCV",
+        "Fuel Cost"
+      ],
+      "duplicate": false,
+      "duplicate_of": null,
+      "status": "SEGREGATED",
+      "notes": [
+        "Fuel-data certificate contains landed-cost/GCV inputs used for variable-cost calculations."
+      ]
+    },
+    {
+      "source_archive": "Panki Extn Fuel Data March'26(2).zip",
+      "original_filename": "WhatsApp Image 2026-07-07 at 12.46.57 PM.jpeg",
+      "original_relative_path": "WhatsApp Image 2026-07-07 at 12.46.57 PM.jpeg",
+      "output_filename": "WhatsApp Image 2026-07-07 at 12.46.57 PM.jpeg",
+      "output_relative_path": "daily_stock/other/WhatsApp Image 2026-07-07 at 12.46.57 PM.jpeg",
+      "file_extension": ".jpeg",
+      "mime_type": "image/jpeg",
+      "file_size_bytes": 88064,
+      "sha256_hash": "e6e40d95cf3335f13709ec687f5fb7fc1b93c16bb03a4d85fa6f001318d12a7a",
+      "detected_category": "DAILY_STOCK",
+      "classification_confidence": "HIGH",
+      "classification_method": "IMAGE_VISUAL_CONTENT",
+      "matched_keywords_or_indicators": [
+        "Daily Coal & Oil Report",
+        "Opening Balance",
+        "Closing Balance"
+      ],
+      "duplicate": false,
+      "duplicate_of": null,
+      "status": "SEGREGATED",
+      "notes": [
+        "Image contains daily coal and fuel-oil stock data."
+      ]
+    },
+    {
+      "source_archive": "Panki Extn Fuel Data March'26(2).zip",
+      "original_filename": "WhatsApp Image 2026-07-07 at 12.47.01 PM.jpeg",
+      "original_relative_path": "WhatsApp Image 2026-07-07 at 12.47.01 PM.jpeg",
+      "output_filename": "WhatsApp Image 2026-07-07 at 12.47.01 PM.jpeg",
+      "output_relative_path": "daily_stock/other/WhatsApp Image 2026-07-07 at 12.47.01 PM.jpeg",
+      "file_extension": ".jpeg",
+      "mime_type": "image/jpeg",
+      "file_size_bytes": 104347,
+      "sha256_hash": "8b7ce43a93763d9f1d32c4228dad0e46ed7bbdf4f35596d2df58f88ae0051a75",
+      "detected_category": "DAILY_STOCK",
+      "classification_confidence": "HIGH",
+      "classification_method": "IMAGE_VISUAL_CONTENT",
+      "matched_keywords_or_indicators": [
+        "Daily Coal & Oil Report",
+        "Opening Balance",
+        "Closing Balance"
+      ],
+      "duplicate": false,
+      "duplicate_of": null,
+      "status": "SEGREGATED",
+      "notes": [
+        "Image contains daily coal and fuel-oil stock data."
+      ]
+    },
+    {
+      "source_archive": "drive-download-20260707T082534Z-3-001(2).zip",
+      "original_filename": "Parichha Landed Cost March_26 dt 16-03-26 to 31-03-26.pdf",
+      "original_relative_path": "Parichha Landed Cost March_26 dt 16-03-26 to 31-03-26.pdf",
+      "output_filename": "Parichha Landed Cost March_26 dt 16-03-26 to 31-03-26.pdf",
+      "output_relative_path": "variable_cost/pdf/Parichha Landed Cost March_26 dt 16-03-26 to 31-03-26.pdf",
+      "file_extension": ".pdf",
+      "mime_type": "application/pdf",
+      "file_size_bytes": 4600655,
+      "sha256_hash": "8d1d69615b6c9ec3733fa04e62405c2671d5e2199441cdb9537746e9eb66321b",
+      "detected_category": "VARIABLE_COST",
+      "classification_confidence": "HIGH",
+      "classification_method": "FILENAME_AND_PDF_VISUAL_CONTENT",
+      "matched_keywords_or_indicators": [
+        "Weighted Average Landed Cost",
+        "GCV",
+        "Fuel Cost"
+      ],
+      "duplicate": false,
+      "duplicate_of": null,
+      "status": "SEGREGATED",
+      "notes": [
+        "Fuel-data certificate contains landed-cost/GCV inputs used for variable-cost calculations."
+      ]
+    },
+    {
+      "source_archive": "drive-download-20260707T082534Z-3-001(2).zip",
+      "original_filename": "Parichha Landed Cost March_26_dt 01.03 to 15.03.pdf",
+      "original_relative_path": "Parichha Landed Cost March_26_dt 01.03 to 15.03.pdf",
+      "output_filename": "Parichha Landed Cost March_26_dt 01.03 to 15.03.pdf",
+      "output_relative_path": "variable_cost/pdf/Parichha Landed Cost March_26_dt 01.03 to 15.03.pdf",
+      "file_extension": ".pdf",
+      "mime_type": "application/pdf",
+      "file_size_bytes": 4639049,
+      "sha256_hash": "e8af40884caaf4db7653b91d02710bfabd416d81325545e90e9d75dd3e26cd87",
+      "detected_category": "VARIABLE_COST",
+      "classification_confidence": "HIGH",
+      "classification_method": "FILENAME_AND_PDF_VISUAL_CONTENT",
+      "matched_keywords_or_indicators": [
+        "Weighted Average Landed Cost",
+        "GCV",
+        "Fuel Cost"
+      ],
+      "duplicate": false,
+      "duplicate_of": null,
+      "status": "SEGREGATED",
+      "notes": [
+        "Fuel-data certificate contains landed-cost/GCV inputs used for variable-cost calculations."
+      ]
+    },
+    {
+      "source_archive": "drive-download-20260707T082534Z-3-001(2).zip",
+      "original_filename": "Revised_Harduaganj fuel data Mar_26.pdf",
+      "original_relative_path": "Revised_Harduaganj fuel data Mar_26.pdf",
+      "output_filename": "Revised_Harduaganj fuel data Mar_26.pdf",
+      "output_relative_path": "variable_cost/pdf/Revised_Harduaganj fuel data Mar_26.pdf",
+      "file_extension": ".pdf",
+      "mime_type": "application/pdf",
+      "file_size_bytes": 4523700,
+      "sha256_hash": "1eea9eba1b9a39cc8ccb19640b07b10c47b67a808e3ff67953ffb777e774d92c",
+      "detected_category": "VARIABLE_COST",
+      "classification_confidence": "HIGH",
+      "classification_method": "FILENAME_AND_PDF_VISUAL_CONTENT",
+      "matched_keywords_or_indicators": [
+        "Weighted Average Landed Cost",
+        "GCV",
+        "Fuel Cost"
+      ],
+      "duplicate": false,
+      "duplicate_of": null,
+      "status": "SEGREGATED",
+      "notes": [
+        "Fuel-data certificate contains landed-cost/GCV inputs used for variable-cost calculations."
+      ]
+    },
+    {
+      "source_archive": "drive-download-20260707T082534Z-3-001(2).zip",
+      "original_filename": "Revised_Obra Fuel Data Feb_26_01.03.2026 to 31.03.2026.pdf",
+      "original_relative_path": "Revised_Obra Fuel Data Feb_26_01.03.2026 to 31.03.2026.pdf",
+      "output_filename": "Revised_Obra Fuel Data Feb_26_01.03.2026 to 31.03.2026.pdf",
+      "output_relative_path": "variable_cost/pdf/Revised_Obra Fuel Data Feb_26_01.03.2026 to 31.03.2026.pdf",
+      "file_extension": ".pdf",
+      "mime_type": "application/pdf",
+      "file_size_bytes": 3925539,
+      "sha256_hash": "c1f8b5f502a4cc0fcfd320b755f16740cf04ab98c19006f75a146956d8bc8736",
+      "detected_category": "VARIABLE_COST",
+      "classification_confidence": "HIGH",
+      "classification_method": "FILENAME_AND_PDF_VISUAL_CONTENT",
+      "matched_keywords_or_indicators": [
+        "Weighted Average Landed Cost",
+        "GCV",
+        "Fuel Cost"
+      ],
+      "duplicate": false,
+      "duplicate_of": null,
+      "status": "SEGREGATED",
+      "notes": [
+        "Fuel-data certificate contains landed-cost/GCV inputs used for variable-cost calculations."
+      ]
+    },
+    {
+      "source_archive": "drive-download-20260707T082534Z-3-001(2).zip",
+      "original_filename": "VC for last 5 months for UNL and IPPs.xlsx",
+      "original_relative_path": "VC for last 5 months for UNL and IPPs.xlsx",
+      "output_filename": "VC for last 5 months for UNL and IPPs.xlsx",
+      "output_relative_path": "variable_cost/spreadsheets/VC for last 5 months for UNL and IPPs.xlsx",
+      "file_extension": ".xlsx",
+      "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "file_size_bytes": 28421,
+      "sha256_hash": "8dd9faf5701b3234da605e9c6c65c2608dc702637efe02f4cf795e18f7b2fb71",
+      "detected_category": "VARIABLE_COST",
+      "classification_confidence": "HIGH",
+      "classification_method": "FILENAME_AND_SPREADSHEET_HEADERS",
+      "matched_keywords_or_indicators": [
+        "VC",
+        "Variable Charge",
+        "UPSLDC"
+      ],
+      "duplicate": false,
+      "duplicate_of": null,
+      "status": "SEGREGATED",
+      "notes": []
+    }
+  ]
+}
