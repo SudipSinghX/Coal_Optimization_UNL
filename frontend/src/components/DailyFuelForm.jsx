@@ -196,7 +196,7 @@ export default function DailyFuelForm({ refreshLive }) {
   };
 
   return (
-    <form onSubmit={submit} style={{ display: "flex", flexDirection: "column", gap: 18 }} id="daily-stock-form">
+    <form onSubmit={submit} style={{ display: "flex", flexDirection: "column", gap: 18, flex: 1 }} id="daily-stock-form">
       {/* Live Data Badge */}
       <div style={{ display: "flex", gap: 10, alignItems: "center", marginBottom: 4 }}>
         <span
@@ -367,17 +367,18 @@ export default function DailyFuelForm({ refreshLive }) {
         </div>
       )}
 
-      {/* Submit button */}
-      <button type="submit" className="submit-btn" id="fp-submit" disabled={loadingPlants}>
-        Submit Stock Entry
-      </button>
+      {/* Submit button & Status messages */}
+      <div style={{ marginTop: "auto", display: "flex", flexDirection: "column", gap: 12 }}>
+        <button type="submit" className="submit-btn" id="fp-submit" disabled={loadingPlants} style={{ marginBottom: 0 }}>
+          Submit Stock Entry
+        </button>
 
-      {/* Status messages */}
-      {status && (
-        <div className="status-msg" style={getStatusStyles()}>
-          {status.message}
-        </div>
-      )}
+        {status && (
+          <div className="status-msg" style={getStatusStyles()}>
+            {status.message}
+          </div>
+        )}
+      </div>
     </form>
   );
 }

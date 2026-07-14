@@ -434,7 +434,7 @@ export default function App() {
                   <span className="panel-title">Daily Fuel Entry Form</span>
                   <span className="panel-badge amber">Manual Input</span>
                 </div>
-                <div style={{ flex: 1 }}>
+                <div style={{ flex: 1, display: "flex", flexDirection: "column" }}>
                   <DailyFuelForm refreshLive={liveData.refresh} />
                 </div>
               </div>
@@ -443,7 +443,7 @@ export default function App() {
                   <span className="panel-title">IPP VC Agreement & Rules Form</span>
                   <span className="panel-badge violet">Action Plan</span>
                 </div>
-                <div style={{ flex: 1 }}>
+                <div style={{ flex: 1, display: "flex", flexDirection: "column" }}>
                   <IppAgreementForm agreements={agreements} onAgreementSaved={handleAgreementSaved} />
                 </div>
               </div>

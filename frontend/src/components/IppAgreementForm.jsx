@@ -143,8 +143,8 @@ export default function IppAgreementForm({ agreements, onAgreementSaved }) {
   };
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 30 }}>
-      <form onSubmit={submit} style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: 30, flex: 1 }}>
+      <form onSubmit={submit} style={{ display: "flex", flexDirection: "column", gap: 20, flex: 1 }}>
         <div className="form-grid">
           <div className="form-field">
             <label className="form-label" htmlFor="ag-ipp-name">Name of IPP TPS</label>
@@ -199,13 +199,16 @@ export default function IppAgreementForm({ agreements, onAgreementSaved }) {
           </div>
         </div>
 
-        <button type="submit" className="submit-btn" id="ag-submit">
-          Save Agreement
-        </button>
+        {/* Submit button & Status messages */}
+        <div style={{ marginTop: "auto", display: "flex", flexDirection: "column", gap: 12 }}>
+          <button type="submit" className="submit-btn" id="ag-submit" style={{ marginBottom: 0 }}>
+            Save Agreement
+          </button>
 
-        {status && (
-          <div className="status-msg">{status}</div>
-        )}
+          {status && (
+            <div className="status-msg">{status}</div>
+          )}
+        </div>
       </form>
 
     </div>
